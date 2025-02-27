@@ -64,31 +64,29 @@ public class Test {
    // tugas
 
 
-
-
    Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        int angkaTebakan = random.nextInt(10) + 1; // Angka antara 1-10
+        int angkaBenar = 6;
         int tebakan;
-        int jumlahTebakan = 0;
+        int jumlahPercobaan = 0;
 
-        System.out.println("Selamat datang di permainan tebak angka");
-        System.out.println("Saya telah memilih sebuah angka antara 1 dan 10.");
-        System.out.println("Bisakah kamu menebaknya?");
+        System.out.println("Selamat datang di permainan tebak angka!");
+        System.out.println("Saya telah memilih sebuah angka antara 1 dan 10. Bisakah kamu menebaknya?");
 
-        do {
+        do{
             System.out.print("Tebakanmu: ");
             tebakan = scanner.nextInt();
-            jumlahTebakan++;
+            jumlahPercobaan++;
 
-            if (tebakan < angkaTebakan) {
-                System.out.println("Terlalu rendah! Coba lagi");
-            } else if (tebakan > angkaTebakan) {
+            if(tebakan < angkaBenar) {
+                System.out.println("Terlalu rendah! Coba lagi.");
+            } else if (tebakan > angkaBenar) {
                 System.out.println("Terlalu tinggi! Coba lagi");
             }
-        } while (tebakan != angkaTebakan);
+        } 
+        while (tebakan != angkaBenar);
+            String hasil = (jumlahPercobaan == 1) ? "Wow! kamu menebaknya dalam sekali coba!" : "Selamat! kamu berhasil menebaknya dalam " + jumlahPercobaan + " percobaan!";
+            System.out.println(hasil);
 
-        System.out.println("Selamat! Kamu menebak sebanyak " + jumlahTebakan + " kali.");
-        scanner.close();
+            scanner.close();
    }
 }  
